@@ -3,8 +3,8 @@
 namespace KimSpeer\TryAlf\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use KimSpeer\TryAlf\TryAlfServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {

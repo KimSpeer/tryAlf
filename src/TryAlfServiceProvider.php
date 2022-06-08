@@ -7,12 +7,12 @@ namespace KimSpeer\TryAlf;
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
 use Illuminate\View\Compilers\BladeCompiler;
-use Livewire\Livewire;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use KimSpeer\TryAlf\Commands\TryAlfCommand;
 use KimSpeer\TryAlf\Components\BladeComponent;
 use KimSpeer\TryAlf\Components\LivewireComponent;
+use Livewire\Livewire;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class TryAlfServiceProvider extends PackageServiceProvider
 {
