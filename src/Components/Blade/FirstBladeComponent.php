@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace VendorName\Skeleton\Components\Blade;
+namespace KimSpeer\TryAlf\Components\Blade;
 
 use Illuminate\Contracts\View\View;
-use VendorName\Skeleton\Components\BladeComponent;
+use KimSpeer\TryAlf\Components\BladeComponent;
 
 class FirstBladeComponent extends BladeComponent
 {
@@ -22,6 +22,6 @@ class FirstBladeComponent extends BladeComponent
 
     public function render(): View
     {
-        return view(':builder::components.blade.first-blade-component');
+        return view('tryalf::components.blade.first-blade-component');
     }
 }

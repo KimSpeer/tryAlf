@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VendorName\Skeleton;
+namespace KimSpeer\TryAlf;
 
 use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Str;
@@ -10,21 +10,21 @@ use Illuminate\View\Compilers\BladeCompiler;
 use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
-use VendorName\Skeleton\Components\BladeComponent;
-use VendorName\Skeleton\Components\LivewireComponent;
+use KimSpeer\TryAlf\Commands\TryAlfCommand;
+use KimSpeer\TryAlf\Components\BladeComponent;
+use KimSpeer\TryAlf\Components\LivewireComponent;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class TryAlfServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('skeleton')
+            ->name('tryalf')
             ->hasConfigFile()
             ->hasViews()
             ->hasTranslations()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_tryalf_table')
+            ->hasCommand(TryAlfCommand::class);
     }
 
     public function boot()
@@ -37,17 +37,17 @@ class SkeletonServiceProvider extends PackageServiceProvider
 
     private function bootResources(): void
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', ':builder');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'tryalf');
     }
 
     private function bootBladeComponents(): void
     {
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
-            $prefix = config(':builder.prefix', '');
-            $assets = config(':builder.assets', []);
+            $prefix = config('tryalf.prefix', '');
+            $assets = config('tryalf.assets', []);
 
             /** @var BladeComponent $component */
-            foreach (config(':builder.components', []) as $alias => $component) {
+            foreach (config('tryalf.components', []) as $alias => $component) {
                 $blade->component($component, $alias, $prefix);
 
                 $this->registerAssets($component, $assets);
@@ -61,11 +61,11 @@ class SkeletonServiceProvider extends PackageServiceProvider
             return;
         }
 
-        $prefix = config(':builder.prefix', '');
-        $assets = config(':builder.assets', []);
+        $prefix = config('tryalf.prefix', '');
+        $assets = config('tryalf.assets', []);
 
         /** @var LivewireComponent $component */
-        foreach (config(':builder.livewire', []) as $alias => $component) {
+        foreach (config('tryalf.livewire', []) as $alias => $component) {
             $alias = $prefix ? "$prefix-$alias" : $alias;
 
             Livewire::component($alias, $component);
@@ -82,25 +82,25 @@ class SkeletonServiceProvider extends PackageServiceProvider
             collect($files)->filter(function (string $file) {
                 return Str::endsWith($file, '.css');
             })->each(function (string $style) {
-                Skeleton::addStyle($style);
+                TryAlf::addStyle($style);
             });
 
             collect($files)->filter(function (string $file) {
                 return Str::endsWith($file, '.js');
             })->each(function (string $script) {
-                Skeleton::addScript($script);
+                TryAlf::addScript($script);
             });
         }
     }
 
     private function bootDirectives(): void
     {
-        Blade::directive(':BuilderStyles', function (string $expression) {
-            return "<?php echo VendorName\\Skeleton\\Skeleton::outputStyles($expression); ?>";
+        Blade::directive('TryAlfStyles', function (string $expression) {
+            return "<?php echo KimSpeer\\TryAlf\\TryAlf::outputStyles($expression); ?>";
         });
 
-        Blade::directive(':BuilderScripts', function (string $expression) {
-            return "<?php echo VendorName\\Skeleton\\Skeleton::outputScripts($expression); ?>";
+        Blade::directive('TryAlfScripts', function (string $expression) {
+            return "<?php echo KimSpeer\\TryAlf\\TryAlf::outputScripts($expression); ?>";
         });
     }
 }

@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace KimSpeer\TryAlf\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class TryAlfCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'tryalf';
 
     public $description = 'My command';
 

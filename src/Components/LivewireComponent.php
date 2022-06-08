@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace VendorName\Skeleton\Components;
+namespace KimSpeer\TryAlf\Components;
 
 use Livewire\Component;
 

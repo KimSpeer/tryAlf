@@ -1,22 +1,22 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "kimspeer/tryalf",
+    "description": "Yeah Alf",
     "keywords": [
-        ":vendor_name",
+        "KimSpeer",
         "laravel",
-        ":package_slug",
+        "tryalf",
         "tall-stack",
         "tailwindcss",
         "alpinejs",
         "livewire",
         "admin"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/kimspeer/tryalf",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "KimSpeer",
+            "email": "kim.speer@co-IT.eu",
             "role": "Developer"
         }
     ],
@@ -47,13 +47,13 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "KimSpeer\\TryAlf\\": "src",
+            "KimSpeer\\TryAlf\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "KimSpeer\\TryAlf\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -68,10 +68,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "KimSpeer\\TryAlf\\TryAlfServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "TryAlf": "KimSpeer\\TryAlf\\Facades\\TryAlf"
             }
         }
     },

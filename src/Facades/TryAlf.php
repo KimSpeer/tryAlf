@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace VendorName\Skeleton\Facades;
+namespace KimSpeer\TryAlf\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @see \VendorName\Skeleton\Skeleton
+ * @see \KimSpeer\TryAlf\TryAlf
  */
-class Skeleton extends Facade
+class TryAlf extends Facade
 {
     protected static function getFacadeAccessor(): string
     {
-        return 'skeleton';
+        return 'tryalf';
     }
 }

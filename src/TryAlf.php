@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace VendorName\Skeleton;
+namespace KimSpeer\TryAlf;
 
-final class Skeleton
+final class TryAlf
 {
     /** @var array */
     protected static $styles = [];
